@@ -1,13 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BoardList from './boardPage/BoardList';
 import BoardEdit from './boardPage/BoardEdit';
 import BoardWrite from './boardPage/BoardWrite';
+import BoardDetail from './boardPage/BoardDetail';
 function App() {
-
-
 
   return (
 
@@ -16,9 +14,9 @@ function App() {
       <Router>
         <Routes>
         <Route path="/" element={<BoardList />} />
-        <Route path="/BoardWrite" element={<BoardWrite />} />
-        <Route path="/boardEdit" element={<BoardEdit />} />
-
+        <Route path="/boardWrite" element={<BoardWrite />} />
+        <Route path="/boardEdit/:boardIndex" element={<BoardEdit />} />
+        <Route path="/boardDetail/:id" element={<BoardDetail />} />
         </Routes>
       </Router>
 
